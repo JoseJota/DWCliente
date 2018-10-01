@@ -1,6 +1,16 @@
-window.onload = function() {
+window.onload = function () {
   //Elementos ocultos
   document.getElementById("letras").style.display = "none";
+  document.getElementById('botonReiniciar').style.display = "none";
+  document.getElementById("f1").style.display = "none";
+  document.getElementById("f2").style.display = "none";
+  document.getElementById("f3").style.display = "none";
+  document.getElementById("f4").style.display = "none";
+  document.getElementById("f5").style.display = "none";
+  document.getElementById("f6").style.display = "none";
+  document.getElementById("f7").style.display = "none";
+  document.getElementById("f8").style.display = "none";
+
 
   //Funcion random
   function getRndInteger(min, max) {
@@ -8,15 +18,15 @@ window.onload = function() {
   }
 
   const palabras = [
-    "Naranja",
-    "Fresa",
-    "Kiwi",
-    "Tomate",
-    "Albaricoque",
-    "Anana",
-    "Nectarina",
-    "Manzana",
-    "Membrillo"
+    "NARANJA",
+    "FRESA",
+    "KIWI"/*
+    "TOMATE",
+    "ALBARICOQUE",
+    "ANANA",
+    "NECTARINA",
+    "MANZANA",
+    "MEMBRILLO"*/
   ];
 
   //Cantidad de palabras que hay en el array palabras:
@@ -29,7 +39,10 @@ window.onload = function() {
 
   letras = palabras[numeroAleatorio].split("");
 
-  //Escribir un parrafo en el html
+  //Crear String "AHORCADO"
+  const stringAhorcado = ["A", "H", "O", "R", "C", "A", "D", "O"];
+  let numFallos = 0;
+  let numAciertos = 0;
 
   //Comenzar juego: Haces click en el botón, este desaparece y aparecen los botones y las celdas vacías.
   document.getElementById("botonStart").addEventListener("click", start, false);
@@ -41,12 +54,17 @@ window.onload = function() {
 
     //Mostrar elementos
     document.getElementById("letras").style.display = "block";
+    document.getElementById('botonReiniciar').style.display = "";
+
+
+    document.getElementById('botonReiniciar').addEventListener('click', reiniciar, false);
+
 
     creartabla();
   }
   function creartabla() {
     // Obtener la referencia del elemento
-    var body = document.getElementById("juego");
+    var body = document.getElementById("divjuego");
 
     // Crea un elemento <table> y un elemento <tbody>
     var tabla = document.createElement("table");
@@ -61,7 +79,8 @@ window.onload = function() {
       // texto sea el contenido de <td>, ubica el elemento <td> al final
       // de la hilera de la tabla
       var celda = document.createElement("td");
-      var textoCelda = document.createTextNode(letras[j]);
+      celda.setAttribute("id", "td" + j);
+      var textoCelda = document.createTextNode("-");
       celda.appendChild(textoCelda);
       hilera.appendChild(celda);
     }
@@ -74,7 +93,39 @@ window.onload = function() {
     // appends <table> into <body>
     body.appendChild(tabla);
   }
+  function compruebaLetra() {
 
+    document.getElementById(this.id).disabled = true;
+
+    console.log(letras);
+    console.log(this.value);
+    if (letras.includes(this.value)) {
+      for (var i = 0; i < letras.length; i++) {
+        //si coinciden se va al table
+        if (letras[i] == this.value) {
+          document.getElementById("td" + i).innerHTML = letras[i];
+          numAciertos++;
+          if (numAciertos == letras.length) {
+            alert("¡Has ganado, la palabra era "+letras+ "!");
+            reiniciar();
+
+          }
+        }
+      }
+    } else {
+      numFallos++;
+      //escribeAhorcado(numFallos);
+      document.getElementById("f"+numFallos).style.display = "";
+      console.log(numFallos)
+
+
+      if (numFallos == 8) {
+        alert("Has perdido, la palabra era " + letras);
+        reiniciar();
+      }
+
+    }
+  }
   //Crear un array con 27 numeros (los numeros del id de cada Button)
   const array27 = [];
   i = 1;
@@ -85,19 +136,10 @@ window.onload = function() {
     //Para conseguir el valor de cada boton:this.value
     document
       .getElementById("button" + numeroLetra)
-      .addEventListener("click", buscarLetra, false);
+      .addEventListener("click", compruebaLetra, false);
   }
 
-  function buscarLetra() {
-    console.log("Has clicado la letra " + this.value);
-    document.getElementById(this.id).disabled = true;
- 
-    for
-    if (letras.indexOf(this.value) != -1) {
-      console.log(letras.indexOf(this.value));
-      alert("Correcto");
-    } else {
-      alert("Incorrecto");
-    }
+  function reiniciar() {
+    window.location.reload();
   }
-};
+}
