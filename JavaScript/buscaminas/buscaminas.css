@@ -1,0 +1,48 @@
+/* RadioButton Dificultad */
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  text-align: center;
+}
+div.todo {
+  display: block;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%;
+}
+.arriba {
+}
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+fieldset div input {
+  margin: 0.4rem;
+}
+
+.juego {
+  display: block;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%;
+}
+.juego table {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.juego table td {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+}
