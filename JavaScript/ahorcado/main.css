@@ -1,0 +1,24 @@
+.center {
+  margin: auto;
+  margin-top: 30px;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.letras {
+  margin-left: 30%; 
+  margin-right: 30%;
+  display: block;
+}
+
+div.letras input {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 0px;
+  overflow: scroll;
+}
+
+.posicionletras {
+}
