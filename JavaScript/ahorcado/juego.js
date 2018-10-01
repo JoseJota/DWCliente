@@ -45,8 +45,8 @@ window.onload = function() {
     creartabla();
   }
   function creartabla() {
-    // Obtener la referencia del elemento body
-    var body = document.getElementsByClassName("posicionletras")[0];
+    // Obtener la referencia del elemento
+    var body = document.getElementById("juego");
 
     // Crea un elemento <table> y un elemento <tbody>
     var tabla = document.createElement("table");
