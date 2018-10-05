@@ -2,6 +2,10 @@ window.onload = function() {
   //Elementos ocultos
   document.getElementById("juego").style.display = "none";
 
+  let ganado = false;
+  let perdido = false;
+  let idCeldasConMina = [];
+
   document
     .getElementById("botonComenzar")
     .addEventListener("click", start, false);
@@ -10,13 +14,12 @@ window.onload = function() {
   function getRadioButtonSelectedValue(ctrl) {
     for (i = 0; i < ctrl.length; i++) if (ctrl[i].checked) return ctrl[i].value;
   }
-
   function start() {
     //Ocultar instrucciones
     document.getElementById("arriba").style.display = "none";
 
     //Mostrar pantalla de juego
-    document.getElementById("juego").style.display = "block";
+    document.getElementById("juego").style.display = "";
 
     seleccionDificultad();
     creartabla();
@@ -27,28 +30,30 @@ window.onload = function() {
       document.selectorDif.dificultad
     );
     //let dificultad= document.getElementById("dificultadPrincipiante").value;
-    console.log(dificultad);
-
     if (dificultad == "principiante") {
-      let largo = 8;
+      const largo = 8;
       const ancho = 8;
       const cantidadMinas = 10;
       creartabla(largo, ancho);
+      ponerMinas(largo, ancho, cantidadMinas);
     } else if (dificultad == "intermedio") {
       const largo = 16;
       const ancho = 16;
       const cantidadMinas = 40;
       creartabla(largo, ancho);
+      ponerMinas(largo, ancho, cantidadMinas);
     } else if (dificultad == "experto") {
       const largo = 16;
       const ancho = 30;
       const cantidadMinas = 99;
       creartabla(largo, ancho);
+      ponerMinas(largo, ancho, cantidadMinas);
     } else {
-      let largo = 8;
+      const largo = 8;
       const ancho = 8;
       const cantidadMinas = 10;
       creartabla(largo, ancho);
+      ponerMinas(largo, ancho, cantidadMinas);
     }
   }
 
@@ -70,10 +75,13 @@ window.onload = function() {
         // texto sea el contenido de <td>, ubica el elemento <td> al final
         // de la hilera de la tabla
         var celda = document.createElement("td");
-        celda.id = i + " " + j;
-        var textoCelda = document.createTextNode("maw");
+        celda.id = i + "-" + j;
+        idCelda = i + "-" + j;
+        var textoCelda = document.createTextNode("");
         celda.appendChild(textoCelda);
         hilera.appendChild(celda);
+
+        document.getElementById(idCelda).addEventListener("click", celdaClic, false);
       }
 
       // agrega la hilera al final de la tabla (al final del elemento tblbody)
@@ -83,5 +91,32 @@ window.onload = function() {
     tabla.appendChild(tblBody);
     // appends <table> into <body>
     body.appendChild(tabla);
+  }
+
+  function ponerMinas(largo, ancho, cantidadMinas) {
+    celdaMina = "";
+    oldCeldaMina = "";
+
+    for (let index = 0; index < cantidadMinas; index++) {
+      while (celdaMina == "" || celdaMina == oldCeldaMina) {
+        let minaX = Math.floor(Math.random() * largo);
+        let minaY = Math.floor(Math.random() * ancho);
+        idMina = minaX + "-" + minaY;
+        celdaMina = document.getElementById(idMina);
+        //celdaMina.innerHTML="*";
+        //document.getElementById(minaX+"-"+minaY).style.backgroundImage = "url('bombrevealed.gif')"
+        celdaMina.style.backgroundColor = "red";
+
+        //Meto las "celdas con regalito" en el array de "idCeldasConMina"
+        idCeldasConMina[index] = idMina;
+      }
+
+      oldCeldaMina = celdaMina;
+    }
+
+    console.log(idCeldasConMina);
+  }
+  celdaClic = (e) => {
+    e.target.id;
   }
 };

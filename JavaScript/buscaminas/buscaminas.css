@@ -6,13 +6,12 @@ body {
 h1 {
   text-align: center;
 }
-div.todo {
-  display: block;
-  margin-left: 30%;
-  margin-right: 30%;
-  width: 40%;
-}
+
 .arriba {
+  margin: auto;
+  width: 40%;
+  min-width: 30px;
+
 }
 legend {
   background-color: #000;
@@ -24,16 +23,12 @@ fieldset div input {
   margin: 0.4rem;
 }
 
-.juego {
-  display: block;
-  margin-left: 30%;
-  margin-right: 30%;
-  width: 40%;
-}
 .juego table {
   border-color: black;
   border-style: solid;
   border-width: 1px;
+  margin: auto;
+  box-shadow: 10px 10px 10px;
 }
 
 .juego table td {
@@ -45,4 +40,5 @@ fieldset div input {
   border-style: solid;
   border-width: 1px;
   text-align: center;
+  background-color: lightgray;
 }
