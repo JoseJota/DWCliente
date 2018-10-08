@@ -5,7 +5,7 @@ window.onload = function() {
   let ganado = false;
   let perdido = false;
   let idCeldasConMina = [];
-
+  let idCelda = "";
   document
     .getElementById("botonComenzar")
     .addEventListener("click", start, false);
@@ -76,16 +76,16 @@ window.onload = function() {
         // de la hilera de la tabla
         var celda = document.createElement("td");
         celda.id = i + "-" + j;
-        idCelda = i + "-" + j;
         var textoCelda = document.createTextNode("");
         celda.appendChild(textoCelda);
         hilera.appendChild(celda);
-
-        document.getElementById(idCelda).addEventListener("click", celdaClic, false);
+        
+        idCelda = document.getElementById(celda.id);/* .addEventListener("click", celdaClic, false); */
       }
 
       // agrega la hilera al final de la tabla (al final del elemento tblbody)
       tblBody.appendChild(hilera);
+      
     }
     // posiciona el <tbody> debajo del elemento <table>
     tabla.appendChild(tblBody);
@@ -107,16 +107,19 @@ window.onload = function() {
         //document.getElementById(minaX+"-"+minaY).style.backgroundImage = "url('bombrevealed.gif')"
         celdaMina.style.backgroundColor = "red";
 
-        //Meto las "celdas con regalito" en el array de "idCeldasConMina"
+        //OLD Meto las "celdas con regalito" en el array de "idCeldasConMina"
         idCeldasConMina[index] = idMina;
       }
 
       oldCeldaMina = celdaMina;
-    }
 
-    console.log(idCeldasConMina);
+      
+    }
   }
-  celdaClic = (e) => {
-    e.target.id;
+  class celdaClic {
+    constructor(todasCeldas) {
+      this.innerHTML = todasCeldas;
+    }
   }
+
 };

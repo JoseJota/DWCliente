@@ -42,3 +42,10 @@ fieldset div input {
   text-align: center;
   background-color: lightgray;
 }
+
+.spooky{
+  display: block;
+  margin: auto;
+  text-align: center;
+
+}
