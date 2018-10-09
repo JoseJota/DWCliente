@@ -11,55 +11,55 @@
 </head>
 
 <body>
-<div>
-    <h1>Buscaminas</h1>
-    <div class="arriba" id="arriba">
-    <h3>Instrucciones:</h3>
-    <ul>
-        <li>El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina. </li>
-        <li>Algunas casillas tienen un número, el cual indica la cantidad de minas que hay en las casillas
-            circundantes. </li>
-        <li>Si se descubre una casilla con una mina se pierde la partida. </li>
-        <li>Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir las
-            que están cerca. </li>
-        <li>Los niveles son:
-    <ul>
-        <li>Nivel principiante: 8 × 8 casillas y 10 minas.</li>
-        <li>Nivel intermedio: 16 × 16 casillas y 40 minas.</li>
-        <li>Nivel experto: 16 × 30 casillas y 99 minas.</li>
-    </ul></li>
-</ul>
-<form name="selectorDif">
-        <fieldset>
-            <legend>Elige una dificultad:</legend>
-    
-            <div>
-                <input type="radio" id="dificultadPrincipiante" 
-                       name="dificultad" value="principiante" checked />
-                <label for="principiante">Principiante</label>
-            </div>
-    
-            <div>
-                <input type="radio" id="dificultadIntermedio" 
-                       name="dificultad" value="intermedio" />
-                <label for="intermedio">Intermedio</label>
-            </div>
-    
-            <div>
-                <input type="radio" id="dificultadExperto" 
-                       name="dificultad" value="experto" />
-                <label for="experto">Experto</label>
-            </div>
-    
-        </fieldset>
-    </form>
-<button id="botonComenzar">Comenzarrr</button>
-</div>
-<!-- Pantalla de juego -->
-<div class="juego" id="juego">
+    <div>
+        <h1>Buscaminas</h1>
+        <div class="arriba" id="arriba">
+            <h3>Instrucciones:</h3>
+            <ul>
+                <li>El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina. </li>
+                <li>Algunas casillas tienen un número, el cual indica la cantidad de minas que hay en las casillas
+                    circundantes. </li>
+                <li>Si se descubre una casilla con una mina se pierde la partida. </li>
+                <li>Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a
+                    descubrir las
+                    que están cerca. </li>
+                <li>Los niveles son:
+                    <ul>
+                        <li>Nivel principiante: 8 × 8 casillas y 10 minas.</li>
+                        <li>Nivel intermedio: 16 × 16 casillas y 40 minas.</li>
+                        <li>Nivel experto: 16 × 30 casillas y 99 minas.</li>
+                    </ul>
+                </li>
+            </ul>
+            <form name="selectorDif">
+                <fieldset>
+                    <legend>Elige una dificultad:</legend>
 
-</div>
-</div>
+                    <div>
+                        <input type="radio" id="dificultadPrincipiante" name="dificultad" value="principiante" checked />
+                        <label for="principiante">Principiante</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="dificultadIntermedio" name="dificultad" value="intermedio" />
+                        <label for="intermedio">Intermedio</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="dificultadExperto" name="dificultad" value="experto" />
+                        <label for="experto">Experto</label>
+                    </div>
+
+                </fieldset>
+            </form>
+            <br>
+            <button id="botonComenzar">Comenzar</button>
+        </div>
+        <!-- Pantalla de juego -->
+        <div class="juego" id="juego">
+
+        </div>
+    </div>
 
 </body>
 

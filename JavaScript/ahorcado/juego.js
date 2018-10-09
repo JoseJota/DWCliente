@@ -97,7 +97,6 @@ window.onload = function () {
 
     document.getElementById(this.id).disabled = true;
 
-    console.log(letras);
     console.log(this.value);
     if (letras.includes(this.value)) {
       for (var i = 0; i < letras.length; i++) {
@@ -134,9 +133,7 @@ window.onload = function () {
   for (let index = 0; index < array27.length; index++) {
     numeroLetra = array27[index];
     //Para conseguir el valor de cada boton:this.value
-    document
-      .getElementById("button" + numeroLetra)
-      .addEventListener("click", compruebaLetra, false);
+    document.getElementById("button" + numeroLetra).addEventListener("click", compruebaLetra, false);
   }
 
   function reiniciar() {
