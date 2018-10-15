@@ -1,3 +1,3 @@
-var sumar = function(a, b) {
+var sumar = (a, b) => {
   return a + b;
 };

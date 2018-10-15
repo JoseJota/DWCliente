@@ -1,3 +1,3 @@
-var restar = function(a, b) {
+var restar = (a, b) => {
   return a - b;
 };
