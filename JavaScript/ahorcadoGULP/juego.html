@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>El Ahorcado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/build/todo.js"></script>
+</head>
+
+<body>
+    <div class="center">
+        <h1>El Ahorcado</h1>
+        <div id="instrucciones">
+            <h3>Instrucciones</h3>
+            <ul>
+                <li>Para ganar completa la palabra secreta rellenando los huecos con las letras del tablero.</li>
+                <li>Cada vez que falles se añadirá una letra a la palabra "Ahorcado".</li>
+                <li>Cuando falles ocho veces y se complete la palabra "Ahorcado" habrás perdido.</li>
+            </ul>
+        </div>
+        <div id="divjuego">
+        </div>
+        <div id="posicionletras" class="posicionletras">
+
+        </div>
+
+        <div id="palabras">
+            <div id="letras" class="letras">
+                <input type="button" value="Q" id="button1">
+                <input type="button" value="W" id="button2">
+                <input type="button" value="E" id="button3">
+                <input type="button" value="R" id="button4">
+                <input type="button" value="T" id="button5">
+                <input type="button" value="Y" id="button6">
+                <input type="button" value="U" id="button7">
+                <input type="button" value="I" id="button8">
+                <input type="button" value="O" id="button9">
+                <input type="button" value="P" id="button10">
+                <br>
+                <input type="button" value="A" id="button11">
+                <input type="button" value="S" id="button12">
+                <input type="button" value="D" id="button13">
+                <input type="button" value="F" id="button14">
+                <input type="button" value="G" id="button15">
+                <input type="button" value="H" id="button16">
+                <input type="button" value="J" id="button17">
+                <input type="button" value="K" id="button18">
+                <input type="button" value="L" id="button19">
+                <input type="button" value="Ñ" id="button20">
+                <br>
+                <input type="button" value="Z" id="button21">
+                <input type="button" value="X" id="button22">
+                <input type="button" value="C" id="button23">
+                <input type="button" value="V" id="button24">
+                <input type="button" value="B" id="button25">
+                <input type="button" value="N" id="button26">
+                <input type="button" value="M" id="button27">
+            </div>
+            <br>
+            <button type="button" id="botonStart" class="botonStart">EMPEZAR</button>
+            <button type="button" id="botonReiniciar" class="botonReiniciar">REINICIAR</button>
+            <div class="divahorcado" id="divahorcado">
+                <table>
+                    <tr>
+                      <td id="f1">A</td>
+                      <td id="f2">H</td>
+                      <td id="f3">O</td>
+                      <td id="f4">R</td>
+                      <td id="f5">C</td>
+                      <td id="f6">A</td>
+                      <td id="f7">D</td>
+                      <td id="f8">O</td>
+                    </tr>
+            </div>
+        </div>
+        <p id="mensajeFin"></p>
+    </div>
+    <div>
+        <img src="images/Horario.jpg">
+    </div>
+
+</body>
+
+</html>

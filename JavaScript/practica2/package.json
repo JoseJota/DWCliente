@@ -12,6 +12,7 @@
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.1",
+    "gulp-responsive": "^2.11.0",
     "gulp-uglify": "^3.0.1",
     "gulp-uglify-es": "^1.0.4"
   }
