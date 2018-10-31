@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>El Ahorcado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="build/main.bundle.js"></script>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/build/main.css" />
+    <script src="./js/source/main.js"></script>
+    <!-- <script src="./node_modules/lodash/random.js" type="module"></script> -->
+
 </head>
 
 <body>
@@ -22,14 +25,14 @@
                 <li>Cuando falles ocho veces y se complete la palabra "Ahorcado" habrás perdido.</li>
             </ul>
         </div>
-        <div id="divjuego">
+        <div id='seconds-counter'> </div>
+        <div id="divjuego" class="mx-auto" style="width: 200px;">
         </div>
-        <div id="posicionletras" class="posicionletras">
-
-        </div>
+        
+        <br>
 
         <div id="palabras">
-            <div id="letras" class="letras">
+            <div id="letras" class="input-group">
                 <input type="button" value="Q" id="button1">
                 <input type="button" value="W" id="button2">
                 <input type="button" value="E" id="button3">
@@ -63,23 +66,30 @@
             <br>
             <button type="button" id="botonStart" class="botonStart">EMPEZAR</button>
             <button type="button" id="botonReiniciar" class="botonReiniciar">REINICIAR</button>
-            <div class="divahorcado" id="divahorcado">
+            <div class="mx-auto" style="width: 200px;" id="divahorcado">
+                
                 <table>
                     <tr>
-                      <td id="f1">A</td>
-                      <td id="f2">H</td>
-                      <td id="f3">O</td>
-                      <td id="f4">R</td>
-                      <td id="f5">C</td>
-                      <td id="f6">A</td>
-                      <td id="f7">D</td>
-                      <td id="f8">O</td>
+                        <td id="f1">A</td>
+                        <td id="f2">H</td>
+                        <td id="f3">O</td>
+                        <td id="f4">R</td>
+                        <td id="f5">C</td>
+                        <td id="f6">A</td>
+                        <td id="f7">D</td>
+                        <td id="f8">O</td>
                     </tr>
             </div>
         </div>
         <p id="mensajeFin"></p>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

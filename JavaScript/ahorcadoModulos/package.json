@@ -1,7 +1,6 @@
 {
   "name": "ahorcadomodulos",
   "version": "1.0.0",
-  "description": "",
   "main": "juego.js",
   "scripts": {
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js"
@@ -12,6 +11,18 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
-    "http-server": "^0.11.1"
-  }
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "http-server": "^0.11.1",
+    "pump": "^3.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "lodash": "^4.17.11"
+  },
+  "description": ""
 }
