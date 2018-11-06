@@ -10,7 +10,8 @@ window.onload = function() {
   const img4 = document.getElementById("imagen4");
 
   div1.ondrop = drop;
-  div1.ondragover = allowDrop;
+  div1.addEventListener("ondragover",allowDrop,false);
+  //div1.ondragover = allowDrop;
 
   div2.ondrop = drop;
   div2.ondragover = allowDrop;
@@ -25,12 +26,11 @@ window.onload = function() {
   img2.ondragstart = drag;
   img3.ondragstart = drag;
   img4.ondragstart = drag;
-console.log(div1.hasChildNodes);
-if(div1.hasChildNodes()){
-console.log("Tiene ChildNodes");
-}
+
+
   function allowDrop(ev) {
     ev.preventDefault();
+    if (ev.target.hasChildNodes()) { return; }
   }
   function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
