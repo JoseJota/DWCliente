@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.uno {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    animation-delay: 2s;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+
+}
+
+.dos {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation-delay: 3s;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.tres {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    position: relative;
+    animation-delay: 1s;
+    animation-name: example2;
+    animation-duration: 7s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.cuatro {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    position: relative;
+    animation-delay: 1s;
+    animation-name: example2;
+    animation-duration: 17s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0%   {background-color:#000; left:20px; top:0px;}
+    10%   {background-color:#222; left:40px; top:60px;}
+    25%  {background-color:#444; left:200px; top:0px;}
+    28%   {background-color:#555; left:50px; top:77px;}
+    50%  {background-color:#666; left:200px; top:200px;}
+    60%   {background-color:#888; left:300px; top:100px;}
+    75%  {background-color:#AAA; left:100px; top:20px;}
+    90%   {background-color:#CCC; left:40px; top:150px;}
+    100% {background-color:#DDD; left:100px; top:100px;}
+}
+
+@keyframes example2 {
+    0%   {background-color:darkblue; left:200px; top:0px;}
+    10%   {background-color:deeppink; left:400px; top:600px;}
+    25%  {background-color:darkgoldenrod; left:1000px; top:0px;}
+    28%   {background-color:darkgray; left:500px; top:770px;}
+    50%  {background-color:darkgreen; left:100px; top:70;}
+    60%   {background-color:darkmagenta; left:900; top:1000px;}
+    75%  {background-color:darkorange; left:1000px; top:200px;}
+    90%   {background-color:darkturquoise; left:400px; top:150px;}
+    100% {background-color:red; left:100px; top:1000px;}
+}
+</style>
+</head>
+<body>
+
+
+<div class="uno"></div>
+<div class="dos"></div>
+<div class="tres"></div>
+<div class="cuatro"></div>
+
+</body>
+</html>
