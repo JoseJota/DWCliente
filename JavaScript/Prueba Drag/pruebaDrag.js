@@ -1,38 +1,21 @@
-window.onload = function () {
-  const div1 = document.getElementById("div1");
-  const div2 = document.getElementById("div2");
-  const div3 = document.getElementById("div3");
-  const div4 = document.getElementById("div4");
+window.onload = function() {
+  let puntuacion = 0;
+  let scoreBox = document.getElementById("puntuacion");
+document.getElementById("mensajeFinal");
 
-  const img1 = document.getElementById("imagen1");
-  const img2 = document.getElementById("imagen2");
-  const img3 = document.getElementById("imagen3");
-  const img4 = document.getElementById("imagen4");
+  div1.addEventListener("dragover", allowDrop);
+  div1.addEventListener("drop", drop);
+  div2.addEventListener("dragover", allowDrop);
+  div2.addEventListener("drop", drop);
+  div3.addEventListener("dragover", allowDrop);
+  div3.addEventListener("drop", drop);
+  div4.addEventListener("dragover", allowDrop);
+  div4.addEventListener("drop", drop);
 
-  div1.ondrop = drop;
-  div1.ondragover = allowDrop;
-
-  div2.ondrop = drop;
-  div2.ondragover = allowDrop;
-
-  div3.ondrop = drop;
-  div3.ondragover = allowDrop;
-
-  div4.ondrop = drop;
-  div4.ondragover = allowDrop;
-
-  //img1.ondragstart = drag;
-  if (partida == )
-  img1.addEventListener("dragstart", function(event) {
-    event.dataTransfer.setData("Text", event.target.id);
-    document.getElementById("demo").innerHTML = "Started to drag the p element.";
-});
-  
-
-/*   img2.ondragstart = drag;
-  img3.ondragstart = drag;
-  img4.ondragstart = drag; */
-
+  document.getElementById("imagen1").addEventListener("dragstart", drag);
+  document.getElementById("imagen2").addEventListener("dragstart", drag);
+  document.getElementById("imagen3").addEventListener("dragstart", drag);
+  document.getElementById("imagen4").addEventListener("dragstart", drag);
 
   function allowDrop(ev) {
     ev.preventDefault();
@@ -40,9 +23,38 @@ window.onload = function () {
   function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
   }
+  scoreBox.innerHTML = "Puntuacion: " + 0;
   function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData("contenido");
+
+      if ((data == 'imagen1') && (ev.target.id == 'div1')) {
+          ev.target.appendChild(document.getElementById(data));
+          alert('CORRECTO');
+          puntuacion = puntuacion + 100;
+      }
+      if ((data == 'imagen2') && (ev.target.id == 'div2')) {
+          ev.target.appendChild(document.getElementById(data));
+          alert('CORRECTO');
+          puntuacion = puntuacion + 100;
+      }
+      if ((data == 'imagen3') && (ev.target.id == 'div3')) {
+          ev.target.appendChild(document.getElementById(data));
+          alert('CORRECTO');
+          puntuacion = puntuacion + 100;
+      }
+      if ((data == 'imagen4') && (ev.target.id == 'div4')) {
+        ev.target.appendChild(document.getElementById(data));
+        alert('CORRECTO');
+        puntuacion = puntuacion + 100;
+    }
+      if (puntuacion > 0) {
+          scoreBox.innerHTML = "Puntuacion: " + puntuacion;
+      }
+      if (puntuacion == 300) {
+          document.getElementById("scoreBox").style.display = "none";
+          document.getElementById("mensajeFinal").style.display = "block";
+          document.getElementById("volver").style.display = "block";
+      }
+}
 };
