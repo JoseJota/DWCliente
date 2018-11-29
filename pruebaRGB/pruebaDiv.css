@@ -1,0 +1,70 @@
+body {
+  background-color: black;
+  
+}
+
+.contenedor {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+#circuloRojo {
+  background-color: rgba(255, 0, 0, 0.4);
+  margin-top: -275px; /* height/2 = 500px / 2 */
+  margin-left: -75px; /* width/2 = 500px / 2 */
+}
+#circuloVerde {
+  background-color: rgba(0, 255, 0, 0.4);
+  margin-top: -150px; /* height/2 = 500px / 2 */
+}
+#circuloAzul {
+  background-color: rgba(0, 0, 255, 0.4);
+  margin-top: -150px; /* height/2 = 500px / 2 */
+  margin-left: -150px; /* width/2 = 500px / 2 */
+}
+
+
+
+/* Animación rotar 360 */
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  #rotating {
+
+      margin:25%;
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 0.5s linear infinite;
+  }
