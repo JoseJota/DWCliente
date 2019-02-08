@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="container">
+    <div class="card-header bg-primary text-white">{{ title }}</div>
+    <div class="card-block">
+      <div *ngFor="let person of people">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-block">
+              <form class="form">
+                <div class="form-group row">
+                  <label
+                    class="col-form-label col-sm-2 text-sm-right"
+                    for="filterDesc"
+                    >Filtro:</label
+                  >
+                  <div class="col-sm-5">
+                    <input
+                      type="text"
+                      [(ngModel)]="filterSearch"
+                      class="form-control"
+                      name="filterDesc"
+                      id="filterDesc"
+                      placeholder="Filter..."
+                    />
+                  </div>
+                  <label class="col-form-label col-sm-5">
+                    Filtrando por: {{ filterSearch }}</label
+                  >
+                </div>
+              </form>
+              <div class="card-title" [ngClass]="{ 'bg-info': true }">
+                {{ person.name }}
+              </div>
+              <!-- <p class="card-text" [ngStyle]="{'background-color':person.country === 'Spain' ? 'red':'blue'}">{{ person.country }}</p> -->
+              <!-- <div class="card-text" [ngStyle]="{'background-color': getColor(person.country) }">{{person.country}}</div> -->
+              <div
+                class="card-text"
+                *ngIf="showPais"
+                [ngClass]="getClass(person.country)"
+              >
+                {{ person.country }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <button (click)="togglePais()">
+          {{ showPais ? "Ocultar" : "Mostrar" }} pais
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

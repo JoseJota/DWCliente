@@ -20,13 +20,13 @@ window.onload = function () {
   const palabras = [
     "NARANJA",
     "FRESA",
-    "KIWI"/*
+    "KIWI",
     "TOMATE",
     "ALBARICOQUE",
     "ANANA",
     "NECTARINA",
     "MANZANA",
-    "MEMBRILLO"*/
+    "MEMBRILLO"
   ];
 
   //Cantidad de palabras que hay en el array palabras:

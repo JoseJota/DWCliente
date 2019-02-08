@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <script src="angular.js"></script>
+    <script src="script2.js"></script>
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <table style="width:100%" ng-repeat="x in pintores">
+      <tr>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+      </tr>
+      <tr ng-repeat="x in pintores">
+        <td>{{pintores.Nombre}}</td>
+        <td>{{pintores.Ciudad}}</td>
+      </tr>
+    </table>
+  </body>
+</html>

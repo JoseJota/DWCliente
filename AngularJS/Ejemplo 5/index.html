@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <script src="angular.js"></script>
+    <script src="script.js"></script>
+
+  </head>
+  <body ng-controller="Controller">
+    <p> Adivina el valor: (Del 1 al 3)</p> 
+    <input type="text" id="inputTxt" ng-model="valor" maxlength="1">
+    <input type="submit" value="Calcular" ng-click="calcular()"> 
+    <p> {{acierto}} </p>
+  </body>
+</html>

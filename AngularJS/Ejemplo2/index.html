@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+ 
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+  <div ng-controller="Controller1">
+    <input type="text" ng-model="colorFondo">  
+  <p style="background-color: {{colorFondo}}" >Cambia el color de fondo</p>
+  <input type="text" ng-model="nombre">  
+  <p >{{nombre}}</p>
+
+
+  </div>
+  <div ng-controller="Controller2">
+
+  </div>
+  </body>
+ 
+</html>

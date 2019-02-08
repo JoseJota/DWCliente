@@ -1,81 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="main.js"></script>
-  </head>
+</head>
 
-  <body>
-    <form id="registro" method="post">
-      <h1>Regístrate!</h1>
-      <ul>
-        <li>
-          <label for="nombre">Mi nombre es:</label>
-          <input type="text" id="nombre" name="nombre" required />
-        </li>
-        <li>
-          <label for="email">Mi email es:</label>
-          <input type="email" id="email" name="email" required />
-        </li>
-        <li>
-          <label for="url">Mi dirección web es:</label>
-          <input type="text" id="url" name="url" />
-        </li>
-        <li>
-          <label for="password1">Introduce la contraseña:</label>
-          <span>(al menos 6 caracteres, sin espacios)</span>
-          <input
-            type="password1"
-            id="password1"
-            name="password1"
-            minlength="6"
-            required
-          />
-        </li>
-        <li>
-          <label for="password2">Repite la contraseña:</label>
-          <span>(al menos 6 caracteres, sin espacios)</span>
-          <input
-            type="password2"
-            id="password2"
-            name="password2"
-            minlength="6"
-            required
-          />
-        </li>
-        <li>
-          <label for="conocimientos"
-            >En una escala de 1 a 10, mis conocimientos de HTML5 son:</label
-          >
-          <input type="range" id="conocimientos" name="conocimientos" min="1" max="10" />
-        </li>
-        <li>
-          <label for="fechaInicio"
-            >Por favor, inicia mi suscripción el día:</label
-          >
-          <input type="date" id="fechaInicio" name="fechaInicio" required />
-        </li>
-        <li>
-          <label for="cantidad"
-            >Me gustaría recibir
-            <input
-              type="number"
-              name="cantidad"
-              id="cantidad"
-              value="1"
-              min="0"
-              max="5"
-            />
-            copias de <cite>El manual de HTML5</cite>.</label
-          >
-        </li>
-        <li><input type="button" id="registro-button" value="Envíame" /></li>
-      </ul>
+<body>
+    <form method="POST" id="formulario">
+        <h1>Formulario</h1>
+        <label>Nombre:</label>
+        <br>
+        <input type="text" name="nombre" id="nombre" autofocus required />
+        <br>
+        <label>E-mail:</label>
+        <br>
+        <input type="email" name="email" id="email" placeholder="email@hotmail.com, email@hotmail.com" multiple required />
+        <br>
+        <label>Password:</label>
+        <br>
+        <input type="password" name="password1" id="pass1" pattern="\S{6,}" required />
+        <br>
+        <label>Password Repetida:</label>
+        <br>
+        <input type="password" name="password2" id="pass2" pattern="\S{6,}" required />
+        <br>
+        <label>URL:</label>
+        <br>
+        <input type="url" name="url" id="url" placeholder="http://pagina.com" />
+        <br>
+        <label>Nivel de conocimientos 1-10:</label>
+        <br>
+        <input type="range" name="conocimientos" id="conocimientos" min="1" max="10"  />
+        <br>
+        <label>Fecha de Inicio:</label>
+        <br>
+        <input type="date" name="fechaInicio" id="fecha" required />
+        <br>
+        <label>Cantidad:</label>
+        <br>
+        <input type="number" name="cantidad" id="cantidad" min="0" max="5" value="1" />
+        <br>
+        <label>Dirección:</label>
+        <br>
+        <input type="text" name="direccion" id="direccion" />
+        <br>
+        <label>C.Postal:</label>
+        <br>
+        <input type="text" name="codigoPostal" id="codigoPostal" required />
+        <br>
     </form>
-    <p><i> Validar Código Postal por JavaScript</i></p>
-  </body>
+    <p id="correcto"></p>
+    <br>
+    <button id="enviar">Enviar</button>
+</body>
+
 </html>
