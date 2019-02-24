@@ -25,36 +25,31 @@ document.getElementById("mensajeFinal");
   }
   scoreBox.innerHTML = "Puntuacion: " + 0;
   function drop(ev) {
-      ev.preventDefault();
-      const data = ev.dataTransfer.getData("contenido");
+    ev.preventDefault();
+    const data = ev.dataTransfer.getData("contenido");
 
-      if ((data == 'imagen1') && (ev.target.id == 'div1')) {
-          ev.target.appendChild(document.getElementById(data));
-          alert('CORRECTO');
-          puntuacion = puntuacion + 100;
-      }
-      if ((data == 'imagen2') && (ev.target.id == 'div2')) {
-          ev.target.appendChild(document.getElementById(data));
-          alert('CORRECTO');
-          puntuacion = puntuacion + 100;
-      }
-      if ((data == 'imagen3') && (ev.target.id == 'div3')) {
-          ev.target.appendChild(document.getElementById(data));
-          alert('CORRECTO');
-          puntuacion = puntuacion + 100;
-      }
-      if ((data == 'imagen4') && (ev.target.id == 'div4')) {
+    if ((data == 'imagen1') && (ev.target.id == 'div1')) {
         ev.target.appendChild(document.getElementById(data));
         alert('CORRECTO');
-        puntuacion = puntuacion + 100;
     }
-      if (puntuacion > 0) {
-          scoreBox.innerHTML = "Puntuacion: " + puntuacion;
-      }
-      if (puntuacion == 300) {
-          document.getElementById("scoreBox").style.display = "none";
-          document.getElementById("mensajeFinal").style.display = "block";
-          document.getElementById("volver").style.display = "block";
-      }
+    if ((data == 'imagen2') && (ev.target.id == 'div2')) {
+        ev.target.appendChild(document.getElementById(data));
+        alert('CORRECTO');
+    }
+    if ((data == 'imagen3') && (ev.target.id == 'div3')) {
+        ev.target.appendChild(document.getElementById(data));
+        alert('CORRECTO');
+    }
+    if ((data == 'imagen4') && (ev.target.id == 'div4')) {
+        ev.target.appendChild(document.getElementById(data));
+        alert('CORRECTO');
+    }
+
+    if (score == 300) {
+        document.getElementById("scoreBox").style.display = "none";
+        document.getElementById("mensajeFinal").style.display = "block";
+        document.getElementById("volver").style.display = "block";
+    }
+}
 }
 };
