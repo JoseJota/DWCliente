@@ -52,7 +52,7 @@
 </section><!--/.about-2 end -->
 <!--about-2 end -->
 <!--gallery start-->
-<section class="gallery">
+<section *ngFor="let nombre of infoPageService.nombre"  class="gallery">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-12">
